@@ -6,6 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
+//TODO нужно все-таки разделить pets и owners по отдельным сервисам я думаю, хотя дело вкуса
 public class OwnersServiceApplication {
 
     public static void main(String[] args) {

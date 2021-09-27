@@ -6,6 +6,7 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 
 @EnableConfigServer
 @SpringBootApplication
+//TODO separate databases for microservices, do not use one for all
 public class ConfigServerApplication {
 
     public static void main(String[] args) {
