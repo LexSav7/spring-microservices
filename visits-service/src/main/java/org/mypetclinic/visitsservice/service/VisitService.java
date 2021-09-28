@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface VisitService {
 
-    List<Visit> getAllVisits();
-
     List<Visit> getVisitsForPet(long petId);
+
+    List<Visit> getVisitsForPets(List<Long> petIds);
+
+    Visit addVisit(Visit visit, long petId);
 }

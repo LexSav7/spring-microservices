@@ -34,7 +34,7 @@ public class Visit {
 //    @ManyToOne
 //    @JoinColumn(name = "pet_id")
     @Column(name = "pet_id")
-    private long petId;
+    private Long petId;
 
 
 }
