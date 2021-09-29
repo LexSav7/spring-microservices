@@ -15,7 +15,7 @@ public class OwnerServiceClient {
 
     public Mono<OwnerDetails> getOwner(long id) {
         return webClient.build().get()
-                .uri(hostname + "/api/v1/owners/{ownerId}", id)
+                .uri(hostname + "/owners/{ownerId}", id)
                 .retrieve()
                 .bodyToMono(OwnerDetails.class);
     }

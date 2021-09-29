@@ -18,7 +18,7 @@ public class VisitsServiceClient {
 
     public Mono<Visits> getVisitsForPets(List<Long> petIds) {
         return webClient.build().get()
-                .uri(hostname + "/api/v1/pets/visits?petIds={petIds}", concatToString(petIds))
+                .uri(hostname + "/pets/visits?petIds={petIds}", concatToString(petIds))
                 .retrieve()
                 .bodyToMono(Visits.class);
     }

@@ -25,6 +25,7 @@ import java.time.Duration;
 
 @SpringBootApplication
 @EnableDiscoveryClient
+//TODO form validation
 public class ApiGatewayApplication {
 
     public static void main(String[] args) {

@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
 @RequiredArgsConstructor
-//TODO изменить в ангуляре маппинги, чтоб здесь было красиво (один общий маппинг на контроллер типа api/v1/visits)
 public class VisitController {
 
     private final VisitService visitService;

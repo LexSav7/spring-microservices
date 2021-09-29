@@ -17,7 +17,6 @@ import java.util.Optional;
 
 @RestController
 //TODO учитывай оунер айди, есть ли под ним определенный пет
-@RequestMapping("/api/v1/owners/{ownerId}/pets")
 public class PetController {
 
     private final PetService petService;
@@ -36,12 +35,12 @@ public class PetController {
         return petTypeRepository.findAllByOrderById();
     }
 
-    @GetMapping(value = "/{petId}")
+    @GetMapping(value = "/owners/{ownerId}/pet/{petId}")
     public PetDetails getPet(@PathVariable("petId") long petId) {
         return petService.getPetDetailsDto(petId);
     }
 
-    @PostMapping()
+    @PostMapping("/owners/{ownerId}/pet")
     @ResponseStatus(HttpStatus.CREATED)
     public Pet addPet(@RequestBody PetRequest petRequest, @PathVariable("ownerId") long ownerId) {
 
@@ -50,7 +49,7 @@ public class PetController {
         return pet;
     }
 
-    @PutMapping("/{petId}")
+    @PutMapping("/owners/{ownerId}/pet/{petId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public Pet updatePet(@RequestBody PetRequest petRequest) {
         return petService.updatePet(petRequest);
