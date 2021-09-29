@@ -2,6 +2,7 @@ package com.mypetclinic.ownersservice.controller;
 
 import com.mypetclinic.ownersservice.model.Owner;
 import com.mypetclinic.ownersservice.service.OwnerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,15 +12,11 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/owners")
 public class OwnerController {
 
     private final OwnerService ownerService;
-
-    @Autowired
-    public OwnerController(OwnerService ownerService) {
-        this.ownerService = ownerService;
-    }
 
     @GetMapping("/{ownerId}")
     public Owner getOwner(@PathVariable("ownerId") long ownerId) {
